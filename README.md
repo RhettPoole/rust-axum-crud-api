@@ -33,9 +33,10 @@ To recreate the development environment, you need the following software and/or 
 
 I found these websites useful in developing this software:
 
-* [Website Title](Link)
+* https://codevoweb.com/create-a-simple-api-in-rust-using-the-axum-framework/
 * https://github.com/wpcodevo/simple-api-rust-axum 
-*
+* https://www.youtube.com/watch?v=qbLc5a9jdXo 
+* https://www.geeksforgeeks.org/introduction-to-rust-programming-language/ 
 
 ## Future Work
 

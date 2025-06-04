@@ -27,13 +27,19 @@ The expected minimum amount of time each Sprint for each category is as follows:
 |Date      |Start Time|Category|Description                                 |Total Minutes|
 |----------|----------|:------:|--------------------------------------------|:-----------:|
 |5.28      |10:00AM   |IM      |Create project plan, initialize repo        |1:00HR-      |
-|5.28      |2:00      |MTG     |Attend Planning Meeting                     |1:00HR       |
-|5.28      |6:00      |IM      |Complete Hello World Activity, set up env   |0:30HR-      |
-|6.1       |2:00      |TP      |Add login functionality to BrokeMeals       |2:00HR       |
-|6.2       |2:00      |TP      |Attend In class team meeting                |1:00HR       |
-|6.2       |4:30      |IM      |Complete training exercises, fn/struc/misc  |0:30HR-      |
-|6.2       |5:00      |IM      |Start API Model/Handlers/Response           |3:00HR-      |
-|6.3       |7:00      |IM      |Continue writing Handlers                   |1:24HR-      |
+|5.28      |2:00PM    |MTG     |Attend Planning Meeting                     |1:00HR       |
+|5.28      |6:00PM    |IM      |Complete Hello World Activity, set up env   |0:30HR-      |
+|6.1       |2:00PM    |TP      |Add login functionality to BrokeMeals       |2:00HR       |
+|6.2       |2:00PM    |TP      |Attend In class team meeting                |1:00HR       |
+|6.2       |4:30PM    |IM      |Complete training exercises, fn/struc/misc  |0:30HR-      |
+|6.2       |5:00PM    |IM      |Start API Model/Handlers/Response           |3:00HR-      |
+|6.3       |7:00PM    |IM      |Continue writing Handlers                   |1:24HR-      |
+|6.4       |10:00AM   |        |                                            |             |
+|          |          |        |                                            |             |
+|          |          |        |                                            |             |
+|          |          |        |                                            |             |
+|          |          |        |                                            |             |
+
 
 
 _Note: Add more rows as needed._

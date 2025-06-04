@@ -1,6 +1,7 @@
 /* **Summary:**  
 This file sets up a simple web server using Rust and the Axum framework. It listens on port 8000 and responds to GET requests at `/api/healthcheecker` with a JSON message. The code uses async/await for non-blocking operations and prints a message when the server starts. */
 
+
 /* This line imports tools from 'axum' web framework for Rust. */
 use axum:: {response:: IntoResponse, routing::get, Json, Router};
     // 'IntoResponse': Lets us return different types from our handler functions.
@@ -13,7 +14,7 @@ async fn health_checker_handler() -> impl IntoResponse {
     // Returns something that can be turned into an HTTP response. '->' specifies return type.
 
     /* Defines a constant string called "MESSAGE" */
-    const MESSAGE: &str = "Build Simply CRUD API in Rust using Axum";
+     const MESSAGE: &str = "Build Simply CRUD API in Rust using Axum";
         // '&str' is using a string slice, represents a view into a string. Uses string data.
 
     /* Creates a JSON object with two fields 'status' and 'message'. Uses 'serde_json' crate to build this JSON. */
@@ -24,14 +25,14 @@ async fn health_checker_handler() -> impl IntoResponse {
         "message": MESSAGE
     });
 
-    /* -> serde_json compiling example
+    /*-> serde_json compiling example
     let data = serde_json::json!({
     "name": "Alice",
     "age": 30,
     "is_member": true
-    });
+    }); */
     // This creates a json object like this: {"name":"Alice","age":30,"is_member":true}
-    */
+    
 
     /* Wraps the JSON object we just created in an Axum 'Json' type, to it can be as a JSON HTTP response to the browser or console. */
     Json(json_response)
