@@ -4,6 +4,7 @@
 
 **Project Description**: Simple CRUD operations API written in Rust, using the AXUM web framework, tested using Postman. The majority of this code is built using this guide: https://codevoweb.com/create-a-simple-api-in-rust-using-the-axum-framework/
     - Much of the code was outdated and I had to troubleshoot the code after finishing the guide. As I have never worked with Rust, I felt comfortable using a guide to code and then review what the function means and why we are structuring it. You'll notice in my commit history there are many more comments explaining syntax and built in keywords in Rust and Axum. As I progressed through the guide I started to remember what many of the words and syntax meant, so I stopped adding syntax comments.
+    - I fed prompts to my CoPilot during code reviews such as: "Let's go line by line and review this code. I need to know exactly what that line is doing and why it is integral to our program. Assume that I know nothing about servers, API's, or Rust. I'm trying to understand this program as deeply as possible."
 
 **Project Goals**: Learn how to write an API using Rust. See differences in API's in different languages. This will be my first time ever using Rust. I'm assuming the majority of my time will be spent studying and finding what syntax to use as I build the project.
 
@@ -37,6 +38,7 @@ I found these websites useful in developing this software:
 * https://github.com/wpcodevo/simple-api-rust-axum 
 * https://www.youtube.com/watch?v=qbLc5a9jdXo 
 * https://www.geeksforgeeks.org/introduction-to-rust-programming-language/ 
+* https://docs.rs/axum/latest/axum/ 
 
 ## Future Work
 

@@ -1,6 +1,7 @@
 /* **Summary:**  
 This file sets up a simple web server using Rust and the Axum framework. It listens on port 8000 and responds to GET requests at `/api/healthcheecker` with a JSON message. The code uses async/await for non-blocking operations and prints a message when the server starts. */
 
+/* This file was used to just create a basic server with the minimum functionality of starting a server using AXUM. */
 
 /* This line imports tools from 'axum' web framework for Rust. */
 use axum:: {response:: IntoResponse, routing::get, Json, Router};

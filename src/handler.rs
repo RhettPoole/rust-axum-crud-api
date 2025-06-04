@@ -20,6 +20,7 @@ use crate::{
     response::{SingleTodoResponse, TodoData, TodoListResponse},
 };
 
+/* When user navigates to health checker route, print a message. */
 pub async fn health_checker_handler() -> impl IntoResponse {
     const MESSAGE: &str = "Build Simple CRUD API in Rust using Axum";
 
@@ -31,31 +32,46 @@ pub async fn health_checker_handler() -> impl IntoResponse {
     Json(json_response)
 }
 
+/* Asynchronous function that handles use trying to get a list of todos. */
 pub async fn todos_list_handler(
     opts: Option<Query<QueryOptions>>,
     State(db): State<DB>,
 ) -> impl IntoResponse {
     let todos = db.lock().await;
+        // Accesses and locks databse for reading - The database needs to be 'locked' so that the data isn't being changed from multiple requests running at the same time.
     let Query(opts) = opts.unwrap_or_default();
+        // If query parameters are provided, use them. Otherwise use default values.
     let limit = opts.limit.unwrap_or(10);
+        // Checks if a limit is provided in the query for how many todo items can be listed per page. Not integral to our current program. Mainly used for organization in front-end pages.
     let offset = (opts.page.unwrap_or(1) - 1) * limit;
+        // Calculates where to start in the todo list for pagination, uses the page number from the query or defaults to page 1.
     let todos: Vec<Todo> = todos.clone().into_iter().skip(offset).take(limit).collect();
+        // Creates a list of todos for the current page.
+        // todos.clone(): Clones the todo list so we can work with it.
+        // into_iter(): turns the list into an iterator
+        // skip(offset) Skips todos before the current page we are accessing - offset is defined earlier in this function.
+        // take(limit): Takes only the number of todos for this page.
+        // collect(): Collects the results into a new vector.
 
+    /* Prepares the data to send back as a JSON response. */
     let json_response = TodoListResponse {
         status: "success".to_string(),
         results: todos.len(),
         todos,
     };
 
+    /* Wraps the response in Axum's 'Json' type so it can be sent as a JSON HTTP response. */
     Json(json_response)
 }
 
+/* Function handling creating a new todo. */
 pub async fn create_todo_handler(
     State(db): State<DB>,
     Json(body): Json<CreateTodoSchema>,
 ) -> Result<impl IntoResponse, (StatusCode, Json<serde_json::Value>)> {
     let mut vec = db.lock().await;
 
+    /* Checks to see if this todo already exists. */
     if let Some(todo) = vec.iter().find(|todo| todo.title == body.title) {
         let error_response = serde_json::json!({
             "status": "fail",
@@ -64,28 +80,37 @@ pub async fn create_todo_handler(
         return Err((StatusCode::CONFLICT, Json(error_response)));
     }
 
+    /* Generates a unique ID and time stamp for this todo */
     let uuid_id = Uuid::new_v4();
     let datetime = chrono::Utc::now();
 
+    
+    /* Create's the todo structure. */
     let todo = Todo {
         id: Some(uuid_id.to_string()),
         title: body.title,
         content: body.content,
         completed: Some(false),
+            // Automatically sets to false when you create a new task.
         createdAt: Some(datetime),
         updatedAt: Some(datetime),
     };
 
+    /* Adds the new todo to the database/shared todo list. */
     vec.push(todo.clone());
+        // We have to clone it because the todo is used again the response.
 
+    /* Prepares the data to be sent back as a JSON response to the client. */
     let json_response = SingleTodoResponse {
         status: "success".to_string(),
         data: TodoData { todo },
     };
 
+    /* Returns an HTTP 201 Created status and JSON response to the client. */
     Ok((StatusCode::CREATED, Json(json_response)))
 }
 
+/* Retrieves the requested todo item. */
 pub async fn get_todo_handler(
     Path(id): Path<Uuid>,
     State(db): State<DB>,
@@ -109,6 +134,7 @@ pub async fn get_todo_handler(
     Err((StatusCode::NOT_FOUND, Json(err_response)))
 }
 
+/* Allows us to edit a todo item by ID. */
 pub async fn edit_todo_handler(
     Path(id): Path<Uuid>,
     State(db): State<DB>,
@@ -155,6 +181,7 @@ pub async fn edit_todo_handler(
     }
 }
 
+/* Function to delete a todo item by ID. */
 pub async fn delete_todo_handler(
     Path(id): Path<Uuid>,
     State(db): State<DB>,

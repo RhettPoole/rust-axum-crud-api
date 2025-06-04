@@ -36,8 +36,8 @@ The expected minimum amount of time each Sprint for each category is as follows:
 |6.3       |7:00PM    |IM      |Continue writing Handlers                   |1:24HR-      |
 |6.4       |10:00AM   |IM      |Finish Writing code, start testing handlers |2:30HR-      |
 |6.4       |2:00PM    |MTG     |Attend Team Review Meeting                  |1:00HR       |
-|          |          |        |                                            |             |
-|          |          |        |                                            |             |
+|6.4       |3:24PM    |IM      |Continue to refine CRUD operations,         |-             |
+                                    - continued testing and co review       
 |          |          |        |                                            |             |
 
 
