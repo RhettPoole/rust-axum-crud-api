@@ -25,6 +25,11 @@ pub struct Todo {
     pub createdAt: Option<DateTime<Utc>>, // Option date/time
     pub updatedAt: Option<DateTime<Utc>>, // Option date/time
 }
+#[derive(Debug, Deserialize)]
+pub struct CreateTodoSchema {
+    pub title: String,
+    pub content: String,
+}
 
 /* Defines a type alias 'DB' for a thread-safe, shareable, lockable list of 'Todo' items. */
 pub type DB = Arc<Mutex<Vec<Todo>>>;
