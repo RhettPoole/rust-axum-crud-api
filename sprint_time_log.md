@@ -34,8 +34,8 @@ The expected minimum amount of time each Sprint for each category is as follows:
 |6.2       |4:30PM    |IM      |Complete training exercises, fn/struc/misc  |0:30HR-      |
 |6.2       |5:00PM    |IM      |Start API Model/Handlers/Response           |3:00HR-      |
 |6.3       |7:00PM    |IM      |Continue writing Handlers                   |1:24HR-      |
-|6.4       |10:00AM   |        |                                            |             |
-|          |          |        |                                            |             |
+|6.4       |10:00AM   |IM      |Finish Writing code, start testing handlers |2:30HR-      |
+|6.4       |2:00PM    |MTG     |Attend Team Review Meeting                  |1:00HR       |
 |          |          |        |                                            |             |
 |          |          |        |                                            |             |
 |          |          |        |                                            |             |
