@@ -33,7 +33,7 @@ The expected minimum amount of time each Sprint for each category is as follows:
 |6.2       |2:00      |TP      |Attend In class team meeting                |1:00HR       |
 |6.2       |4:30      |IM      |Complete training exercises, fn/struc/misc  |0:30HR-      |
 |6.2       |5:00      |IM      |Start API Model/Handlers/Response           |3:00HR-      |
-|          |          |        |                                            |             |
+|6.3       |7:00      |IM      |Continue writing Handlers                   |1:24HR-      |
 
 
 _Note: Add more rows as needed._
