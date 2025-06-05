@@ -29,26 +29,24 @@ The expected minimum amount of time each Sprint for each category is as follows:
 |5.28      |10:00AM   |IM      |Create project plan, initialize repo        |1:00HR-      |
 |5.28      |2:00PM    |MTG     |Attend Planning Meeting                     |1:00HR       |
 |5.28      |6:00PM    |IM      |Complete Hello World Activity, set up env   |0:30HR-      |
-|6.1       |2:00PM    |TP      |Add login functionality to BrokeMeals       |2:00HR       |
+|6.1       |2:00PM    |TP      |Add login functionality to BrokeMeals       |3:00HR       |
 |6.2       |2:00PM    |TP      |Attend In class team meeting                |1:00HR       |
 |6.2       |4:30PM    |IM      |Complete training exercises, fn/struc/misc  |0:30HR-      |
 |6.2       |5:00PM    |IM      |Start API Model/Handlers/Response           |3:00HR-      |
-|6.3       |7:00PM    |IM      |Continue writing Handlers                   |1:24HR-      |
+|6.3       |7:00PM    |IM      |Continue writing Handlers                   |1:25HR-      |
 |6.4       |10:00AM   |IM      |Finish Writing code, start testing handlers |2:30HR-      |
 |6.4       |2:00PM    |MTG     |Attend Team Review Meeting                  |1:00HR       |
-|6.4       |3:24PM    |IM      |Continue to refine CRUD operations,         |-             |
-                                    - continued testing and co review       
-|          |          |        |                                            |             |
+|6.4       |3:24PM    |IM      |Continue to refine CRUD operations,         |1:35HR-      |
+                                    - continued testing and code review       
+|6.4       |5:00PM    |IM      |Record Video                                |0:30HR-      |
+|6.6       |2:00PM    |MTG     |Attend Individual Review Meeting            |1:00HR       |
 
-
-
-_Note: Add more rows as needed._
 
 ## Sprint Totals
 
 |Categroy                       |Total Time (Hours:Minutes)|
 |-------------------------------|:------------------------:|
-|IM - Individual Module         |                          |
-|TP - Team Project              |                          |
-|MTG - Class Meetings           |                          |
-|**TOTAL**                      |                          |
+|IM - Individual Module         |11:00HRS                  |
+|TP - Team Project              |4:00HRS                   |
+|MTG - Class Meetings           |3:00HRS                   |
+|**TOTAL**                      |18:00HRS                  |

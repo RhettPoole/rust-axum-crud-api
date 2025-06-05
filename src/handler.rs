@@ -118,20 +118,23 @@ pub async fn get_todo_handler(
     let id = id.to_string();
     let vec = db.lock().await;
 
-    if let Some(todo) = vec.iter().find(|todo| todo.id == Some(id.to_owned())) {
-        let json_response = SingleTodoResponse {
-            status: "success".to_string(),
-            data: TodoData { todo: todo.clone() },
-        };
-        return Ok((StatusCode::OK, Json(json_response)));
+    /* The match keyword lets us compare a values. It's ideal for working with enums where we want a specific outcome for a specific variable. The match below lets us search through a list of todo's for a requested ID which is in the Route. If no todo is found with that ID it will return an error. */
+    match vec.iter().find(|todo| todo.id == Some(id.clone())) {
+        Some(todo) => {
+            let json_response = SingleTodoResponse {
+                status: "success".to_string(),
+                data: TodoData { todo: todo.clone() },
+            };
+            Ok((StatusCode::OK, Json(json_response)))
+        }
+        None => {
+            let err_response = serde_json::json!({
+                "status": "fail",
+                "message": format!("Todo with ID: {} not found", id)
+            });
+            Err((StatusCode::NOT_FOUND, Json(err_response)))
+        }
     }
-
-    let err_response = serde_json::json!({
-        "status": "fail",
-        "message": format!("Todo with ID: {} not found", id)
-    });
-
-    Err((StatusCode::NOT_FOUND, Json(err_response)))
 }
 
 /* Allows us to edit a todo item by ID. */
